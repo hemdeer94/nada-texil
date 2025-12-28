@@ -1,0 +1,124 @@
+/* ===== Estilo general ===== */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px; /* Tamaño estándar para lectura cómoda */
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+  zoom: 100%;
+}
+
+/* ===== Encabezado ===== */
+header {
+  background: #c44;   /* Rojo vino */
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+/* Título + subtítulo centrados */
+.encabezado {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.titulo-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marca {
+  font-size: 2.8em;
+  margin: 0;
+  color: white;
+  line-height: 1;
+}
+
+.subtitulo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4em;
+  color: #fdd;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.lema {
+  font-size: 1.1em;
+  font-style: italic;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ===== Navegación ===== */
+nav {
+  background: #222;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #c44;
+}
+
+/* ===== Secciones ===== */
+section {
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  color: #c44;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #c44;
+  padding-bottom: 10px;
+}
+
+/* ===== Productos ===== */
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.producto {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.producto img {
