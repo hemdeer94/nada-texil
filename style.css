@@ -15,35 +15,31 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.6); /* sombra para contraste */
 }
 
 .marca {
-  font-size: 2.8em;
+  font-size: 3em;
   margin: 0;
-  color: black; /* antes: white */
-  line-height: 1;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.6); /* sombra para contraste */
-}
-
+  color: #000; /* ← negro sólido */
+  text-shadow: none;
 }
 
 .subtitulo {
   font-family: 'Dancing Script', cursive;
-  font-size: 1.4em;
-  color: #fdd;
-  margin-top: 5px;
+  font-size: 1.6em;
+  color: #000; /* ← negro sólido */
+  margin-top: 6px;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.6); /* sombra para contraste */
+  text-shadow: none;
 }
 
 .lema {
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-style: italic;
-  margin-top: 10px;
+  margin-top: 12px;
   text-align: center;
-  color: black; /* antes: blanco por herencia */
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.6); /* sombra para contraste */
+  color: #000; /* ← negro sólido */
+  text-shadow: none;
 }
 
 /* Navegación */
@@ -75,6 +71,7 @@ section {
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
+/* Texto dentro de las secciones */
 section p,
 section li {
   color: #222;
@@ -159,55 +156,202 @@ footer a:hover {
   justify-content: center;
 }
 
-/* Capa del hero: sin rojo */
-.hero-overlay {
-  background: none; /* elimina el fondo rojo */
-  width: 100%;
-  height: 100%;
-  padding: 30px 15px;
-  text-align: center;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 /* Títulos dentro del hero */
 .hero-overlay h1.marca {
   font-size: 3em;
-  margin
-.hero-overlay {
-  background: rgba(255, 255, 255, 0.7); /* capa blanca más opaca */
-  color: #111; /* texto más oscuro */
-  width: 100%;
-  height: 100%;
-  padding: 30px 15px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 12px; /* bordes suaves */
-  box-shadow: 0 0 20px rgba(0,0,0,0.1); /* sombra ligera */
-}
-
-.hero-overlay h1.marca {
-  font-size: 3em;
   margin: 0;
-  color: #111;
-  text-shadow: none;
+  color: #000; /* negro sólido */
 }
 
 .hero-overlay h2.subtitulo {
   font-family: 'Dancing Script', cursive;
   font-size: 1.6em;
-  color: #333;
+  color: #b33; /* rojo vino pastel */
   margin-top: 5px;
-  text-shadow: none;
 }
 
 .hero-overlay .lema {
   font-size: 1.2em;
   font-style: italic;
   margin-top: 15px;
-  color: #111;
+  color: #000; /* negro sólido */
 }
+
+
+/* Galería filtrable (mínimo CSS, sin romper nada) */
+.filtros-ropa {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.btn-negro {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-negro:hover {
+  background-color: #333;
+  transform: translateY(-1px);
+}
+
+.galeria-ropa {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.galeria-ropa .item {
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.galeria-ropa .item:hover {
+  transform: scale(1.03);
+}
+
+/* Hero responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .hero-header {
+    height: 400px;
+  }
+
+  .hero-overlay h1.marca {
+    font-size: 2.2em;
+  }
+
+  .hero-overlay h2.subtitulo {
+    font-size: 1.3em;
+  }
+
+  .hero-overlay .lema {
+    font-size: 1em;
+  }
+} /* cierre correcto del media */
+
+#ropa .producto.item {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: none;
+}
+
+#ropa .producto.item.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+  display: block;
+}
+
+.acciones {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background-color: #b33;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #922;
+  transform: scale(1.05);
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filtro {
+  background-color: #b33;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: aparecer 0.5s ease forwards;
+}
+
+.filtro.todos { animation-delay: 0.1s; }
+.filtro.camisetas { animation-delay: 0.2s; }
+.filtro.buzos { animation-delay: 0.3s; }
+.filtro.pantalones { animation-delay: 0.4s; }
+
+.filtro:hover {
+  background-color: #922;
+  transform: scale(1.05);
+}
+
+.filtro.activo {
+  background-color: #000;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titulo-texto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.titulo-columna {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centrado vertical */
+}
+
+.logo-nada {
+  width: 70px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  object-fit: contain;
+}
+
+.marca {
+  font-size: 3em;
+  margin: 0;
+  color: #000;
+}
+
+.subtitulo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6em;
+  color: #000;
+  margin-top: 6px;
+}
+
