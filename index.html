@@ -2,28 +2,25 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NADA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=2">
+  <title>NADA — Arte Textil Personalizado</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Encabezado -->
-<header class="hero-header">
-  <div class="hero-overlay">
-    <div class="encabezado">
+  <!-- Encabezado / Hero -->
+  <header class="hero-header">
+    <div class="hero-overlay">
       <div class="titulo-texto">
         <img src="img/logo-nada.png" alt="Logo NADA" class="logo-nada">
         <div class="titulo-columna">
           <h1 class="marca">NADA</h1>
           <h2 class="subtitulo">Arte Textil Personalizado</h2>
+          <p class="lema">Tu estilo, tu estampado.</p>
         </div>
       </div>
     </div>
-    <p class="lema">Tu estilo, tu estampado.</p>
-  </div>
-</header>
-
+  </header>
 
   <!-- Navegación -->
   <nav>
@@ -34,143 +31,328 @@
     <a href="#sobre">Sobre nosotros</a>
   </nav>
 
-  <!-- Ropa estampada -->
-  <section id="ropa">
-    <h2>Ropa estampada</h2>
-
-    <!-- Filtros con clases -->
-    <div class="filtros">
-      <button class="filtro todos" onclick="filtrarGaleria('todos')">Todos</button>
-      <button class="filtro camisetas" onclick="filtrarGaleria('camisetas')">Camisetas</button>
-      <button class="filtro buzos" onclick="filtrarGaleria('buzos')">Buzos</button>
-      <button class="filtro pantalones" onclick="filtrarGaleria('pantalones')">Pantalones</button>
-    </div>
-
-    <div class="productos imagenes">
-      <!-- Camisetas -->
-      <div class="producto item camisetas">
-        <img src="img/minimalista.png" alt="Camiseta Minimalista">
-        <h3>Camiseta Minimalista</h3>
-        <p>Diseño sobrio y elegante en tonos pastel.</p>
-        <div class="acciones">
-          <button class="btn comprar">Comprar</button>
-          <button class="btn contacto">Contacto</button>
-          <button class="btn ver">Ver más</button>
-        </div>
+  <!-- Contenido principal -->
+  <main>
+    <!-- Ropa -->
+    <section id="ropa">
+      <h2>Ropa Estampada</h2>
+      <div class="filtros">
+        <button class="filtro todos" onclick="filtrarSeccion('#ropa','todos')">Todos</button>
+        <button class="filtro camisetas" onclick="filtrarSeccion('#ropa','camisetas')">Camisetas</button>
+        <button class="filtro buzos" onclick="filtrarSeccion('#ropa','buzos')">Buzos</button>
+        <button class="filtro pantalones" onclick="filtrarSeccion('#ropa','pantalones')">Pantalones</button>
       </div>
 
-      <div class="producto item camisetas">
-        <img src="img/tipografica.png" alt="Camiseta Tipográfica">
-        <h3>Camiseta Tipográfica</h3>
-        <p>Mensaje discreto con tipografía limpia y moderna.</p>
-        <div class="acciones">
-          <button class="btn comprar">Comprar</button>
-          <button class="btn contacto">Contacto</button>
-          <button class="btn ver">Ver más</button>
+      <div class="productos imagenes">
+        <!-- Camisetas -->
+        <div class="producto item camisetas mostrar">
+          <img src="img/minimalista.png" alt="Camiseta Minimalista">
+          <h3>Camiseta Minimalista</h3>
+          <p>Diseño sobrio y elegante en tonos pastel.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20la%20Camiseta%20Minimalista','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20la%20Camiseta%20Minimalista','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Material:</strong> Algodón 100% suave.</p>
+            <p><strong>Tallas:</strong> S, M, L, XL.</p>
+          </div>
+        </div>
+
+        <div class="producto item camisetas mostrar">
+          <img src="img/tipografica.png" alt="Camiseta Tipográfica">
+          <h3>Camiseta Tipográfica</h3>
+          <p>Mensaje discreto con tipografía limpia y moderna.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20la%20Camiseta%20Tipografica','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20la%20Camiseta%20Tipografica','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Material:</strong> Mezcla algodón/poliéster.</p>
+            <p><strong>Tallas:</strong> S, M, L.</p>
+          </div>
+        </div>
+
+        <!-- Buzos -->
+        <div class="producto item buzos mostrar">
+          <img src="img/sudadera-goku.png" alt="Buzo Estampado">
+          <h3>Buzo Estampado</h3>
+          <p>Arte gráfico moderno para un look urbano.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Buzo%20Estampado','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Buzo%20Estampado','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Material:</strong> Algodón grueso, interior afelpado.</p>
+            <p><strong>Tallas:</strong> M, L, XL.</p>
+          </div>
+        </div>
+
+        <div class="producto item buzos mostrar">
+          <img src="img/buzo-minimalista.png" alt="Buzo Minimal">
+          <h3>Buzo Minimal</h3>
+          <p>Logo pequeño, composición equilibrada.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Buzo%20Minimal','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Buzo%20Minimal','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Material:</strong> Algodón premium.</p>
+            <p><strong>Tallas:</strong> S, M, L, XL.</p>
+          </div>
+        </div>
+
+        <!-- Pantalones -->
+        <div class="producto item pantalones mostrar">
+          <img src="img/pantalon.png" alt="Pantalón Urbano">
+          <h3>Pantalón Urbano</h3>
+          <p>Estilo relajado con estampado suave.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Pantalon%20Urbano','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Pantalon%20Urbano','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Material:</strong> Algodón y elastano.</p>
+            <p><strong>Tallas:</strong> 28, 30, 32, 34.</p>
+          </div>
+        </div>
+
+        <div class="producto item pantalones mostrar">
+          <img src="img/pantalon2.png" alt="Pantalón Minimalista">
+          <h3>Pantalón Minimalista</h3>
+          <p>Detalles discretos en tonos pastel.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Pantalon%20Minimalista','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Pantalon%20Minimalista','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Material:</strong> Algodón ligero.</p>
+            <p><strong>Tallas:</strong> 28, 30, 32.</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Buzos -->
-      <div class="producto item buzos">
-        <img src="img/sudadera-goku.png" alt="Buzo Estampado">
-        <h3>Buzo Estampado</h3>
-        <p>Arte gráfico moderno para un look urbano.</p>
-        <div class="acciones">
-          <button class="btn comprar">Comprar</button>
-          <button class="btn contacto">Contacto</button>
-          <button class="btn ver">Ver más</button>
-        </div>
+    <!-- Marcos -->
+    <section id="marcos">
+      <h2>Arte en Marcos Personalizados</h2>
+      <div class="filtros">
+        <button class="filtro todos" onclick="filtrarSeccion('#marcos','todos')">Todos</button>
+        <button class="filtro sublimados" onclick="filtrarSeccion('#marcos','sublimados')">Sublimados</button>
+        <button class="filtro metal" onclick="filtrarSeccion('#marcos','metal')">Metal</button>
+        <button class="filtro modernos" onclick="filtrarSeccion('#marcos','modernos')">Modernos</button>
       </div>
 
-      <div class="producto item buzos">
-        <img src="img/buzo-minimalista.png" alt="Buzo Minimal">
-        <h3>Buzo Minimal</h3>
-        <p>Logo pequeño y composición equilibrada en pastel.</p>
-        <div class="acciones">
-          <button class="btn comprar">Comprar</button>
-          <button class="btn contacto">Contacto</button>
-          <button class="btn ver">Ver más</button>
+      <div class="productos imagenes">
+        <div class="producto item sublimados mostrar">
+          <img src="img/sublimado-paisaje.png" alt="Marco sublimado">
+          <h3>Marco Sublimado</h3>
+          <p>Colores vivos y duraderos.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Marco%20Sublimado','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Marco%20Sublimado','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Técnica:</strong> Sublimación.</p>
+          </div>
+        </div>
+
+        <div class="producto item sublimados mostrar">
+          <img src="img/messi.png" alt="Marco sublimado de Messi">
+          <h3>Marco Sublimado de Messi</h3>
+          <p>Celebración de un ícono del fútbol.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Marco%20Sublimado%20de%20Messi','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Marco%20Sublimado%20de%20Messi','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Tamaño:</strong> 30x40 cm.</p>
+          </div>
+        </div>
+
+        <div class="producto item metal mostrar">
+          <img src="img/satoru.png" alt="Marco de metal">
+          <h3>Marco de Metal</h3>
+          <p>Resistente y moderno.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Marco%20de%20Metal','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Marco%20de%20Metal','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Material:</strong> Aleación ligera.</p>
+          </div>
+        </div>
+
+        <div class="producto item metal mostrar">
+          <img src="img/cr7.png" alt="Marco metálico de CR7">
+          <h3>Marco Metálico de CR7</h3>
+          <p>Energía y carisma en un marco único.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Marco%20Metalico%20de%20CR7','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Marco%20Metalico%20de%20CR7','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Acabado:</strong> Mate.</p>
+          </div>
+        </div>
+
+        <div class="producto item modernos mostrar">
+          <img src="img/marcos-dtf.png" alt="Marco moderno">
+          <h3>Marco Moderno</h3>
+          <p>Toque natural y relajante.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Marco%20Moderno','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Marco%20Moderno','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Estilo:</strong> Minimal contemporáneo.</p>
+          </div>
+        </div>
+
+        <div class="producto item modernos mostrar">
+          <img src="img/pluma.png" alt="Marco abstracto">
+          <h3>Marco Abstracto</h3>
+          <p>Color e imaginación.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Marco%20Abstracto','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Marco%20Abstracto','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Paleta:</strong> Tonos cálidos.</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Pantalones -->
-      <div class="producto item pantalones">
-        <img src="img/pantalon.png" alt="Pantalon Urbano">
-        <h3>Pantalon Urbano</h3>
-        <p>Estilo relajado con estampado suave y elegante.</p>
-        <div class="acciones">
-          <button class="btn comprar">Comprar</button>
-          <button class="btn contacto">Contacto</button>
-          <button class="btn ver">Ver más</button>
-        </div>
+    <!-- Bolsos -->
+    <section id="bolsos">
+      <h2>Bolsos Estampados</h2>
+      <div class="filtros">
+        <button class="filtro todos" onclick="filtrarSeccion('#bolsos','todos')">Todos</button>
+        <button class="filtro animales" onclick="filtrarSeccion('#bolsos','animales')">Animales</button>
+        <button class="filtro frases" onclick="filtrarSeccion('#bolsos','frases')">Frases</button>
+        <button class="filtro botanicos" onclick="filtrarSeccion('#bolsos','botanicos')">Botánicos</button>
       </div>
 
-      <div class="producto item pantalones">
-        <img src="img/pantalon2.png" alt="Pantalon Minimalista">
-        <h3>Pantalon Minimalista</h3>
-        <p>Diseño limpio con detalles discretos en tonos pastel.</p>
-        <div class="acciones">
-          <button class="btn comprar">Comprar</button>
-          <button class="btn contacto">Contacto</button>
-          <button class="btn ver">Ver más</button>
+      <div class="productos imagenes">
+        <div class="producto item animales mostrar">
+          <img src="img/tom-jerry.png" alt="Bolso con animales">
+          <h3>Bolso Animalitos</h3>
+          <p>Ilustraciones tiernas, ideal para diario.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Bolso%20Animalitos','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Bolso%20Animalitos','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Material:</strong> Lona impermeable.</p>
+          </div>
+        </div>
+
+        <div class="producto item animales mostrar">
+          <img src="img/gatito.png" alt="Bolso con animales">
+          <h3>Bolso Animado</h3>
+          <p>Diseños con gatos.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Bolso%20Animado','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Bolso%20Animado','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Capacidad:</strong> 12 L.</p>
+          </div>
+        </div>
+
+        <div class="producto item frases mostrar">
+          <img src="img/tomate.png" alt="Bolso con frases">
+          <h3>Bolso con Frases</h3>
+          <p>Mensajes positivos y motivadores.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Bolso%20con%20Frases','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Bolso%20con%20Frases','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Tipografía:</strong> Moderna.</p>
+          </div>
+        </div>
+
+        <div class="producto item frases mostrar">
+          <img src="img/frase2.png" alt="Bolso con frases">
+          <h3>Bolso con Frases</h3>
+          <p>Mensajes motivadores estampados.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Bolso%20con%20Frases%202','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Bolso%20con%20Frases%202','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Color:</strong> Neutros.</p>
+          </div>
+        </div>
+
+        <div class="producto item botanicos mostrar">
+          <img src="img/botanico.png" alt="Bolso botánico">
+          <h3>Bolso Botánico</h3>
+          <p>Hojas y flores, tonos suaves.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Bolso%20Botanico','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Bolso%20Botanico','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Estilo:</strong> Natural.</p>
+          </div>
+        </div>
+
+        <div class="producto item botanicos mostrar">
+          <img src="img/botanico2.png" alt="Bolso botánico">
+          <h3>Bolso con Flores</h3>
+          <p>Naturaleza en tonos elegantes.</p>
+          <div class="acciones">
+            <button class="btn comprar" onclick="window.open('https://wa.me/573176885761?text=Hola%20quiero%20comprar%20el%20Bolso%20con%20Flores','_blank')">Comprar</button>
+            <button class="btn contacto" onclick="window.open('https://wa.me/573176885761?text=Hola%20tengo%20una%20consulta%20sobre%20el%20Bolso%20con%20Flores','_blank')">Contacto</button>
+            <button class="btn ver" onclick="abrirModal(this)">Ver más</button>
+          </div>
+          <div class="detalles">
+            <p><strong>Uso:</strong> Diario.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Marcos -->
-  <section id="marcos">
-    <h2>Arte en Marcos Personalizados</h2>
-    <div class="productos">
-      <div class="producto">
-        <img src="img/marcos-dtf.png" alt="Marcos">
-        <h3>Marcos que Enmarcan tu Estilo</h3>
-        <p>Transformamos cada marco en una obra que enmarca tu esencia con técnicas modernas.</p>
-        <div class="acciones">
-          <button class="btn comprar">Comprar</button>
-          <button class="btn contacto">Contacto</button>
-          <button class="btn ver">Ver más</button>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Servicios -->
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <ul>
+        <li><strong>Estampado personalizado:</strong> tú traes la idea, nosotros la plasmamos.</li>
+        <li><strong>Diseño gráfico:</strong> si no tienes diseño, lo creamos contigo.</li>
+      </ul>
+    </section>
 
-  <!-- Bolsos -->
-  <section id="bolsos">
-    <h2>Bolsos Estampados</h2>
-    <div class="productos">
-      <div class="producto">
-        <img src="img/bolsos-tela.png" alt="Bolsos de tela">
-        <h3>Bolsos de tela</h3>
-        <p>Diseños botánicos, animales y frases. Perfectos para uso diario o regalar.</p>
-        <div class="acciones">
-          <button class="btn comprar">Comprar</button>
-          <button class="btn contacto">Contacto</button>
-          <button class="btn ver">Ver más</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Servicios -->
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <ul>
-      <li><strong>Estampado personalizado:</strong> tú traes la idea, nosotros la plasmamos.</li>
-      <li><strong>Diseño gráfico:</strong> si no tienes diseño, lo creamos contigo.</li>
-    </ul>
-  </section>
-
-  <!-- Sobre nosotros -->
-  <section id="sobre">
-    <h2>Sobre nosotros</h2>
-    <p>Bienvenido a NADA, un emprendimiento dedicado al arte textil personalizado. Creamos piezas únicas que reflejan tu esencia, combinando creatividad, calidad y técnicas modernas de estampado.</p>
-    <ul>
-      <li>Personalización total: tú eliges el diseño, nosotros lo hacemos realidad.</li>
-      <li>Calidad garantizada: materiales duraderos y técnicas profesionales.</li>
-      <li>Estilo auténtico: desde lo minimalista hasta lo vibrante, adaptado a tu gusto.</li>
-    </ul>
-  </section>
+    <!-- Sobre nosotros -->
+    <section id="sobre">
+      <h2>Sobre nosotros</h2>
+      <p>Somos NADA, un emprendimiento dedicado al arte textil personalizado. Creamos piezas únicas que reflejan tu esencia.</p>
+      <ul>
+        <li>Personalización total</li>
+        <li>Calidad garantizada</li>
+        <li>Estilo auténtico</li>
+      </ul>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -183,30 +365,79 @@
     </div>
   </footer>
 
-  <!-- Script de filtros con animación y botón activo -->
-<script>
-  function filtrarGaleria(categoria) {
-    const items = document.querySelectorAll('#ropa .producto.item');
+  <!-- Scripts -->
+  <script>
+  // Filtrado independiente por sección
+  function filtrarSeccion(seccionSelector, categoria) {
+    const seccion = document.querySelector(seccionSelector);
+    if (!seccion) return;
+    const items = seccion.querySelectorAll('.producto.item');
+    const botones = seccion.querySelectorAll('.filtro');
+
     items.forEach(item => {
       const mostrar = categoria === 'todos' || item.classList.contains(categoria);
-      item.classList.remove('mostrar');
-      if (mostrar) {
-        item.style.display = 'block';
-        void item.offsetWidth;
-        item.classList.add('mostrar');
-      } else {
-        item.style.display = 'none';
-      }
+      item.classList.toggle('mostrar', mostrar);
     });
 
-    const botones = document.querySelectorAll('.filtro');
     botones.forEach(btn => btn.classList.remove('activo'));
-    const activo = document.querySelector(`.filtro.${categoria}`);
+    const activo = seccion.querySelector(`.filtro.${categoria}`);
     if (activo) activo.classList.add('activo');
   }
 
+  // Modal ampliado
+  function abrirModal(elemento) {
+    const producto = elemento.closest('.producto');
+    const imagen = producto.querySelector('img').src;
+    const titulo = producto.querySelector('h3').textContent;
+    const descripcion = producto.querySelector('p').textContent;
+    const detalles = producto.querySelector('.detalles')?.innerHTML || "";
+
+    document.getElementById('modal-imagen').src = imagen;
+    document.getElementById('modal-titulo').textContent = titulo;
+    document.getElementById('modal-descripcion').textContent = descripcion;
+    document.getElementById('modal-detalles').innerHTML = detalles;
+
+    const mensaje = encodeURIComponent(`Hola tengo una consulta sobre ${titulo}`);
+    document.getElementById('modal-comprar').onclick = () => {
+      window.open(`https://wa.me/573176885761?text=Hola%20quiero%20comprar%20${encodeURIComponent(titulo)}`, '_blank');
+    };
+    document.getElementById('modal-contacto').onclick = () => {
+      window.open(`https://wa.me/573176885761?text=${mensaje}`, '_blank');
+    };
+
+    document.getElementById('modal-producto').style.display = 'flex';
+  }
+
+  function cerrarModal() {
+    document.getElementById('modal-producto').style.display = 'none';
+  }
+
+  // Cerrar modal al hacer clic fuera
+  window.addEventListener('click', (event) => {
+    const modal = document.getElementById('modal-producto');
+    if (event.target === modal) cerrarModal();
+  });
+
+  // Inicialización
   document.addEventListener('DOMContentLoaded', () => {
-    filtrarGaleria('todos');
+    filtrarSeccion('#ropa', 'todos');
+    filtrarSeccion('#marcos', 'todos');
+    filtrarSeccion('#bolsos', 'todos');
   });
 </script>
-
+<!-- Modal -->
+<div id="modal-producto" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+    <img id="modal-imagen" src="" alt="Producto ampliado" />
+    <h3 id="modal-titulo"></h3>
+    <p id="modal-descripcion"></p>
+    <div id="modal-detalles"></div>
+    <div class="acciones">
+      <button class="btn comprar" id="modal-comprar">Comprar</button>
+      <button class="btn contacto" id="modal-contacto">Contacto</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
