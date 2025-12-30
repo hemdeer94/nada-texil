@@ -8,27 +8,160 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Encabezado con imagen de fondo -->
-  <header class="hero-header">
-    <div class="hero-overlay">
-      <div class="encabezado">
-        <div class="titulo-texto">
+  <!-- Encabezado -->
+<header class="hero-header">
+  <div class="hero-overlay">
+    <div class="encabezado">
+      <div class="titulo-texto">
+        <img src="img/logo-nada.png" alt="Logo NADA" class="logo-nada">
+        <div class="titulo-columna">
           <h1 class="marca">NADA</h1>
           <h2 class="subtitulo">Arte Textil Personalizado</h2>
         </div>
       </div>
-      <p class="lema">Tu estilo, tu estampado.</p>
     </div>
-  </header>
+    <p class="lema">Tu estilo, tu estampado.</p>
+  </div>
+</header>
 
+
+  <!-- Navegación -->
   <nav>
-    <a href="#ropa">Ropa</a>
+    <a href="#ropa">Ropa estampada</a>
     <a href="#marcos">Marcos</a>
     <a href="#bolsos">Bolsos</a>
     <a href="#servicios">Servicios</a>
     <a href="#sobre">Sobre nosotros</a>
   </nav>
 
+  <!-- Ropa estampada -->
+  <section id="ropa">
+    <h2>Ropa estampada</h2>
+
+    <!-- Filtros con clases -->
+    <div class="filtros">
+      <button class="filtro todos" onclick="filtrarGaleria('todos')">Todos</button>
+      <button class="filtro camisetas" onclick="filtrarGaleria('camisetas')">Camisetas</button>
+      <button class="filtro buzos" onclick="filtrarGaleria('buzos')">Buzos</button>
+      <button class="filtro pantalones" onclick="filtrarGaleria('pantalones')">Pantalones</button>
+    </div>
+
+    <div class="productos imagenes">
+      <!-- Camisetas -->
+      <div class="producto item camisetas">
+        <img src="img/minimalista.png" alt="Camiseta Minimalista">
+        <h3>Camiseta Minimalista</h3>
+        <p>Diseño sobrio y elegante en tonos pastel.</p>
+        <div class="acciones">
+          <button class="btn comprar">Comprar</button>
+          <button class="btn contacto">Contacto</button>
+          <button class="btn ver">Ver más</button>
+        </div>
+      </div>
+
+      <div class="producto item camisetas">
+        <img src="img/tipografica.png" alt="Camiseta Tipográfica">
+        <h3>Camiseta Tipográfica</h3>
+        <p>Mensaje discreto con tipografía limpia y moderna.</p>
+        <div class="acciones">
+          <button class="btn comprar">Comprar</button>
+          <button class="btn contacto">Contacto</button>
+          <button class="btn ver">Ver más</button>
+        </div>
+      </div>
+
+      <!-- Buzos -->
+      <div class="producto item buzos">
+        <img src="img/sudadera-goku.png" alt="Buzo Estampado">
+        <h3>Buzo Estampado</h3>
+        <p>Arte gráfico moderno para un look urbano.</p>
+        <div class="acciones">
+          <button class="btn comprar">Comprar</button>
+          <button class="btn contacto">Contacto</button>
+          <button class="btn ver">Ver más</button>
+        </div>
+      </div>
+
+      <div class="producto item buzos">
+        <img src="img/buzo-minimalista.png" alt="Buzo Minimal">
+        <h3>Buzo Minimal</h3>
+        <p>Logo pequeño y composición equilibrada en pastel.</p>
+        <div class="acciones">
+          <button class="btn comprar">Comprar</button>
+          <button class="btn contacto">Contacto</button>
+          <button class="btn ver">Ver más</button>
+        </div>
+      </div>
+
+      <!-- Pantalones -->
+      <div class="producto item pantalones">
+        <img src="img/pantalon.png" alt="Pantalon Urbano">
+        <h3>Pantalon Urbano</h3>
+        <p>Estilo relajado con estampado suave y elegante.</p>
+        <div class="acciones">
+          <button class="btn comprar">Comprar</button>
+          <button class="btn contacto">Contacto</button>
+          <button class="btn ver">Ver más</button>
+        </div>
+      </div>
+
+      <div class="producto item pantalones">
+        <img src="img/pantalon2.png" alt="Pantalon Minimalista">
+        <h3>Pantalon Minimalista</h3>
+        <p>Diseño limpio con detalles discretos en tonos pastel.</p>
+        <div class="acciones">
+          <button class="btn comprar">Comprar</button>
+          <button class="btn contacto">Contacto</button>
+          <button class="btn ver">Ver más</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marcos -->
+  <section id="marcos">
+    <h2>Arte en Marcos Personalizados</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="img/marcos-dtf.png" alt="Marcos">
+        <h3>Marcos que Enmarcan tu Estilo</h3>
+        <p>Transformamos cada marco en una obra que enmarca tu esencia con técnicas modernas.</p>
+        <div class="acciones">
+          <button class="btn comprar">Comprar</button>
+          <button class="btn contacto">Contacto</button>
+          <button class="btn ver">Ver más</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bolsos -->
+  <section id="bolsos">
+    <h2>Bolsos Estampados</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="img/bolsos-tela.png" alt="Bolsos de tela">
+        <h3>Bolsos de tela</h3>
+        <p>Diseños botánicos, animales y frases. Perfectos para uso diario o regalar.</p>
+        <div class="acciones">
+          <button class="btn comprar">Comprar</button>
+          <button class="btn contacto">Contacto</button>
+          <button class="btn ver">Ver más</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <ul>
+      <li><strong>Estampado personalizado:</strong> tú traes la idea, nosotros la plasmamos.</li>
+      <li><strong>Diseño gráfico:</strong> si no tienes diseño, lo creamos contigo.</li>
+    </ul>
+  </section>
+
+  <!-- Sobre nosotros -->
   <section id="sobre">
     <h2>Sobre nosotros</h2>
     <p>Bienvenido a NADA, un emprendimiento dedicado al arte textil personalizado. Creamos piezas únicas que reflejan tu esencia, combinando creatividad, calidad y técnicas modernas de estampado.</p>
@@ -39,61 +172,41 @@
     </ul>
   </section>
 
-  <section id="ropa">
-    <h2>Ropa estampada</h2>
-    <div class="productos">
-      <div class="producto">
-        <img src="img/super-mama.png" alt="Diseño SUPER MAMÁ">
-        <h3>Diseño SUPER MAMÁ</h3>
-        <p>Parte de nuestra colección de camisetas personalizadas con mensajes poderosos y familiares.</p>
-      </div>
-      <div class="producto">
-        <img src="img/sudadera-goku.png" alt="Estampado en Sudaderas">
-        <h3>Estampados en sudaderas</h3>
-        <p>Ideal para sudaderas con estilo. Arte que resalta tu energía.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="marcos">
-    <h2>Arte en Marcos Personalizados</h2>
-    <div class="productos">
-      <div class="producto">
-        <img src="img/marcos-dtf.png" alt="Marcos">
-        <h3>Marcos que Enmarcan tu Estilo</h3>
-        <p>Transformamos cada marco en una obra que enmarca tu esencia. Usamos técnicas como sublimación y vinilo textil para crear piezas que combinan arte gráfico con emoción.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="bolsos">
-    <h2>Bolsos Estampados</h2>
-    <div class="productos">
-      <div class="producto">
-        <img src="img/bolsos-tela.png" alt="Estampado en bolsos de tela">
-        <h3>Bolsos de tela</h3>
-        <p>Diseños botánicos, animales, frases. Perfectos para uso diario o regalar.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <ul>
-      <li><strong>Estampado personalizado:</strong> tú traes la idea, nosotros la plasmamos.</li>
-      <li><strong>Diseño gráfico:</strong> si no tienes diseño, lo creamos contigo.</li>
-    </ul>
-  </section>
-
+  <!-- Footer -->
   <footer>
     <div class="footer-inner">
       <p>© 2025 NADA Arte Textil Personalizado</p>
       <p>
-        <a href="mailto:nadatextil@gmail.com" target="_blank">nadatextil@gmail.com</a>
-        |
+        <a href="mailto:nadatextil@gmail.com" target="_blank">nadatextil@gmail.com</a> |
         <a href="https://wa.me/573176885761" target="_blank">WhatsApp</a>
       </p>
     </div>
   </footer>
-</body>
-</html>
+
+  <!-- Script de filtros con animación y botón activo -->
+<script>
+  function filtrarGaleria(categoria) {
+    const items = document.querySelectorAll('#ropa .producto.item');
+    items.forEach(item => {
+      const mostrar = categoria === 'todos' || item.classList.contains(categoria);
+      item.classList.remove('mostrar');
+      if (mostrar) {
+        item.style.display = 'block';
+        void item.offsetWidth;
+        item.classList.add('mostrar');
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    const botones = document.querySelectorAll('.filtro');
+    botones.forEach(btn => btn.classList.remove('activo'));
+    const activo = document.querySelector(`.filtro.${categoria}`);
+    if (activo) activo.classList.add('activo');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    filtrarGaleria('todos');
+  });
+</script>
+
