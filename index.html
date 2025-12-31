@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=2">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NADA — Arte Textil Personalizado</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -30,6 +30,32 @@
     <a href="#servicios">Servicios</a>
     <a href="#sobre">Sobre nosotros</a>
   </nav>
+<!-- Carrusel de productos destacados -->
+<section class="carrusel">
+  <div class="carrusel-contenedor">
+    <div class="slide activo">
+      <img src="img/minimalista.png" alt="Camiseta Minimalista">
+      <h3>Camiseta Minimalista</h3>
+      <p>Diseño sobrio y elegante en tonos pastel.</p>
+    </div>
+    <div class="slide">
+      <img src="img/buzo-minimalista.png" alt="Buzo Minimal">
+      <h3>Buzo Minimal</h3>
+      <p>Logo pequeño, composición equilibrada.</p>
+    </div>
+    <div class="slide">
+      <img src="img/pantalon.png" alt="Pantalón Urbano">
+      <h3>Pantalón Urbano</h3>
+      <p>Estilo relajado con estampado suave.</p>
+    </div>
+  </div>
+  <div class="controles">
+    <button onclick="moverSlide(-1)"aria-label="Siguiente">‹</button>
+    <button onclick="moverSlide(1)"aria-label="Siguiente">›</button>
+  </div>
+</section>
+
+
 
   <!-- Contenido principal -->
   <main>
@@ -365,66 +391,98 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script>
-  // Filtrado independiente por sección
-  function filtrarSeccion(seccionSelector, categoria) {
-    const seccion = document.querySelector(seccionSelector);
-    if (!seccion) return;
-    const items = seccion.querySelectorAll('.producto.item');
-    const botones = seccion.querySelectorAll('.filtro');
+<!-- Scripts -->
+<script>
+// =========================
+// Filtrado independiente por sección
+// =========================
+function filtrarSeccion(seccionSelector, categoria) {
+  const seccion = document.querySelector(seccionSelector);
+  if (!seccion) return;
+  const items = seccion.querySelectorAll('.producto.item');
+  const botones = seccion.querySelectorAll('.filtro');
 
-    items.forEach(item => {
-      const mostrar = categoria === 'todos' || item.classList.contains(categoria);
-      item.classList.toggle('mostrar', mostrar);
-    });
-
-    botones.forEach(btn => btn.classList.remove('activo'));
-    const activo = seccion.querySelector(`.filtro.${categoria}`);
-    if (activo) activo.classList.add('activo');
-  }
-
-  // Modal ampliado
-  function abrirModal(elemento) {
-    const producto = elemento.closest('.producto');
-    const imagen = producto.querySelector('img').src;
-    const titulo = producto.querySelector('h3').textContent;
-    const descripcion = producto.querySelector('p').textContent;
-    const detalles = producto.querySelector('.detalles')?.innerHTML || "";
-
-    document.getElementById('modal-imagen').src = imagen;
-    document.getElementById('modal-titulo').textContent = titulo;
-    document.getElementById('modal-descripcion').textContent = descripcion;
-    document.getElementById('modal-detalles').innerHTML = detalles;
-
-    const mensaje = encodeURIComponent(`Hola tengo una consulta sobre ${titulo}`);
-    document.getElementById('modal-comprar').onclick = () => {
-      window.open(`https://wa.me/573176885761?text=Hola%20quiero%20comprar%20${encodeURIComponent(titulo)}`, '_blank');
-    };
-    document.getElementById('modal-contacto').onclick = () => {
-      window.open(`https://wa.me/573176885761?text=${mensaje}`, '_blank');
-    };
-
-    document.getElementById('modal-producto').style.display = 'flex';
-  }
-
-  function cerrarModal() {
-    document.getElementById('modal-producto').style.display = 'none';
-  }
-
-  // Cerrar modal al hacer clic fuera
-  window.addEventListener('click', (event) => {
-    const modal = document.getElementById('modal-producto');
-    if (event.target === modal) cerrarModal();
+  items.forEach(item => {
+    const mostrar = categoria === 'todos' || item.classList.contains(categoria);
+    item.classList.toggle('mostrar', mostrar);
   });
 
-  // Inicialización
-  document.addEventListener('DOMContentLoaded', () => {
-    filtrarSeccion('#ropa', 'todos');
-    filtrarSeccion('#marcos', 'todos');
-    filtrarSeccion('#bolsos', 'todos');
-  });
+  botones.forEach(btn => btn.classList.remove('activo'));
+  const activo = seccion.querySelector(`.filtro.${categoria}`);
+  if (activo) activo.classList.add('activo');
+}
+
+// =========================
+// Modal ampliado
+// =========================
+function abrirModal(elemento) {
+  const producto = elemento.closest('.producto');
+  const imagen = producto.querySelector('img').src;
+  const titulo = producto.querySelector('h3').textContent;
+  const descripcion = producto.querySelector('p').textContent;
+  const detalles = producto.querySelector('.detalles')?.innerHTML || "";
+
+  document.getElementById('modal-imagen').src = imagen;
+  document.getElementById('modal-titulo').textContent = titulo;
+  document.getElementById('modal-descripcion').textContent = descripcion;
+  document.getElementById('modal-detalles').innerHTML = detalles;
+
+  const mensaje = encodeURIComponent(`Hola tengo una consulta sobre ${titulo}`);
+  document.getElementById('modal-comprar').onclick = () => {
+    window.open(`https://wa.me/573176885761?text=Hola%20quiero%20comprar%20${encodeURIComponent(titulo)}`, '_blank');
+  };
+  document.getElementById('modal-contacto').onclick = () => {
+    window.open(`https://wa.me/573176885761?text=${mensaje}`, '_blank');
+  };
+
+  document.getElementById('modal-producto').style.display = 'flex';
+}
+
+function cerrarModal() {
+  document.getElementById('modal-producto').style.display = 'none';
+}
+
+// Cerrar modal al hacer clic fuera
+window.addEventListener('click', (event) => {
+  const modal = document.getElementById('modal-producto');
+  if (event.target === modal) cerrarModal();
+});
+
+// =========================
+// Carrusel de productos destacados
+// =========================
+let indice = 0;
+let slides;
+
+function inicializarCarrusel() {
+  slides = document.querySelectorAll('.slide');
+  if (slides.length > 0) {
+    mostrarSlide(0);
+    setInterval(() => moverSlide(1), 5000); // auto-avance cada 5s
+  }
+}
+
+function mostrarSlide(i) {
+  slides.forEach(slide => slide.classList.remove('activo'));
+  indice = (i + slides.length) % slides.length;
+  slides[indice].classList.add('activo');
+}
+
+function moverSlide(direccion) {
+  mostrarSlide(indice + direccion);
+}
+
+// =========================
+// Inicialización general
+// =========================
+document.addEventListener('DOMContentLoaded', () => {
+  filtrarSeccion('#ropa', 'todos');
+  filtrarSeccion('#marcos', 'todos');
+  filtrarSeccion('#bolsos', 'todos');
+  inicializarCarrusel(); // ← activa el carrusel
+});
 </script>
+
 <!-- Modal -->
 <div id="modal-producto" class="modal">
   <div class="modal-contenido">
@@ -441,3 +499,4 @@
 </div>
 </body>
 </html>
+
