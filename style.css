@@ -345,6 +345,7 @@ footer a:hover {
   background-color: #922;
   transform: scale(1.05);
 }
+
 @media (max-width: 768px) {
   .titulo-texto {
     flex-direction: column;
@@ -369,6 +370,102 @@ footer a:hover {
   .lema {
     font-size: 1.1em;
     margin-top: 4px;
+  }
+}
+
+/* ========================= */
+/* Carrusel */
+/* ========================= */
+.carrusel {
+  max-width: 400px;          /* más ancho para que respire */
+  margin: 40px auto;
+  position: relative;
+  overflow: visible;         /* evita que se corten los botones */
+  padding: 0 16px;           /* espacio lateral para controles */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+}
+
+.carrusel-contenedor {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  display: none;             /* oculto por defecto */
+  flex-direction: column;    /* centra verticalmente */
+  align-items: center;       /* centra horizontalmente */
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.slide img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 10px;
+  display: block;
+  border-radius: 8px;
+}
+
+.slide.activo {
+  display: flex;             /* muestra el slide activo */
+}
+
+.controles {
+  position: absolute;
+  top: 50%;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-50%);
+  pointer-events: none;      /* el contenedor no bloquea clics */
+}
+
+.controles button {
+  pointer-events: auto;      /* los botones sí reciben clic */
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================= */
+/* Responsivo carrusel */
+/* ========================= */
+@media (max-width: 480px) {
+  .carrusel {
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  .slide {
+    padding: 16px;
+  }
+
+  .slide img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .controles button {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
   }
 }
 
